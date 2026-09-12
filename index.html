@@ -12,13 +12,13 @@
 :root{
   --bg:#07070c; --panel:#101018; --line:#23233a;
   --ink:#eceaf6; --mut:#8f8ba6;
-  --acc:#9d8bff; --acc2:#ff8bd0;           /* ungu-biru Zeta + magenta, neon ala guns.lol */
-  --glow:0 0 24px rgba(157,139,255,.35);
+  --acc:#5aa8ff; --acc2:#8fd0ff;           /* biru langit + biru muda */
+  --glow:0 0 24px rgba(90,168,255,.35);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scrollbar-color:var(--line) var(--bg)}
 body{
-  background: linear-gradient(rgba(7,7,12,0.7), rgba(7,7,12,0.7)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920') center/cover fixed;
+  background: linear-gradient(rgba(10,22,38,.6), rgba(10,22,38,.6)), url('bg.jpg') center/cover fixed;
   color:var(--ink);
   font-family:"Space Grotesk",system-ui,sans-serif;
   min-height:100vh; overflow-x:hidden;
@@ -38,8 +38,6 @@ body{
 }
 @keyframes pulse{50%{opacity:.35}}
 
-/* ---- partikel ---- */
-#fx{position:fixed; inset:0; z-index:0; pointer-events:none}
 
 /* ---- layout ---- */
 main{
@@ -59,7 +57,7 @@ body.in main{opacity:1; transform:none}
 }
 .avatar::after{
   content:""; position:absolute; inset:-6px; border-radius:50%;
-  border:1px solid rgba(157,139,255,.4); animation:ring 3s linear infinite;
+  border:1px solid rgba(90,168,255,.4); animation:ring 3s linear infinite;
 }
 @keyframes ring{to{transform:rotate(360deg); opacity:.2}}
 h1{
@@ -77,7 +75,7 @@ h1{
   font-family:"JetBrains Mono",monospace; font-size:.72rem; padding:5px 12px;
   border:1px solid var(--line); border-radius:999px; color:var(--mut);
 }
-.chip.on{border-color:rgba(157,139,255,.5); color:var(--acc)}
+.chip.on{border-color:rgba(90,168,255,.5); color:var(--acc)}
 
 /* ---- section ---- */
 section{margin-top:64px}
@@ -92,7 +90,7 @@ p.bio b{color:var(--ink); font-weight:500}
 .dc{display:flex; align-items:center; gap:14px; margin-top:22px; padding:12px 16px;
   border:1px solid var(--line); border-radius:14px; background:var(--panel);
   transition:border-color .25s, box-shadow .25s}
-.dc:hover{border-color:rgba(157,139,255,.55); box-shadow:var(--glow)}
+.dc:hover{border-color:rgba(90,168,255,.55); box-shadow:var(--glow)}
 .dc-ava-wrap{position:relative; flex:none}
 .dc img{width:52px; height:52px; border-radius:50%; object-fit:cover; display:block}
 .dc-dot{position:absolute; right:-2px; bottom:-2px; width:15px; height:15px; border-radius:50%;
@@ -102,7 +100,7 @@ p.bio b{color:var(--ink); font-weight:500}
 .dc-name:hover{color:var(--acc)}
 .dc-sub{font-size:.8rem; color:var(--mut)}
 .dc-spot{display:flex; align-items:center; gap:12px; margin-top:10px; padding:10px 14px;
-  border:1px solid rgba(157,139,255,.35); border-radius:12px; background:rgba(157,139,255,.06);
+  border:1px solid rgba(90,168,255,.35); border-radius:12px; background:rgba(90,168,255,.06);
   animation:pulse-spot 2.4s ease-in-out infinite}
 .dc-spot[hidden]{display:none}
 .dc-spot img{width:44px; height:44px; border-radius:8px; object-fit:cover}
@@ -113,16 +111,16 @@ p.bio b{color:var(--ink); font-weight:500}
 
 .proj{
   border:1px solid var(--line); border-radius:14px; padding:20px 22px; margin-bottom:14px;
-  background:linear-gradient(160deg, rgba(157,139,255,.05), transparent 55%), var(--panel);
+  background:linear-gradient(160deg, rgba(90,168,255,.05), transparent 55%), var(--panel);
   transition:border-color .25s, box-shadow .25s, transform .25s;
 }
-.proj:hover{border-color:rgba(157,139,255,.55); box-shadow:var(--glow); transform:translateY(-2px)}
+.proj:hover{border-color:rgba(90,168,255,.55); box-shadow:var(--glow); transform:translateY(-2px)}
 .proj header{display:flex; align-items:baseline; justify-content:space-between; gap:12px}
 .proj h3{font-size:1.08rem; font-weight:600}
 .proj .ver{font-family:"JetBrains Mono",monospace; font-size:.7rem; color:var(--acc)}
 .proj p{color:var(--mut); line-height:1.65; font-size:.88rem; margin-top:8px}
 .tags{display:flex; flex-wrap:wrap; gap:7px; margin-top:14px}
-.tags i{font-style:normal; font-family:"JetBrains Mono",monospace; font-size:.68rem; padding:3px 10px; border-radius:999px; background:rgba(157,139,255,.09); color:#bdb3ff}
+.tags i{font-style:normal; font-family:"JetBrains Mono",monospace; font-size:.68rem; padding:3px 10px; border-radius:999px; background:rgba(90,168,255,.09); color:#9ecbff}
 
 /* ---- skills ---- */
 .skill{margin-bottom:18px}
@@ -137,10 +135,10 @@ p.bio b{color:var(--ink); font-weight:500}
 }
 .s-head span{font-size:.93rem; color:var(--ink)}
 .s-head b{margin-left:auto; font-family:"JetBrains Mono",monospace; font-size:.72rem; font-weight:500; color:var(--acc)}
-.bar{height:6px; border-radius:999px; background:rgba(157,139,255,.09); overflow:hidden}
+.bar{height:6px; border-radius:999px; background:rgba(90,168,255,.09); overflow:hidden}
 .bar i{
   display:block; height:100%; width:0; border-radius:inherit;
-  background:linear-gradient(90deg, var(--acc), #ff8bd0);
+  background:linear-gradient(90deg, var(--acc), #8fd0ff);
   transition:width 1.2s cubic-bezier(.22,1,.36,1) .15s;
 }
 .skill.in .bar i{width:var(--p)}
@@ -201,7 +199,6 @@ img.avatar{object-fit:cover}
 <body>
 
 <div id="splash"><span>click to enter...</span></div>
-<canvas id="fx"></canvas>
 
 <main>
   <!-- foto profil: kuru.gif -->
@@ -299,7 +296,7 @@ splash.addEventListener('click',()=>{
 },{once:true});
 
 // ---- efek ketik ----
-const LINES=['minecraft plugin developer','paper · spigot · folia','violet evergarden ✦ k-on!','suami nya vestia zeta 💙'];
+const LINES=['developer','artist','animator','suami nya vestia zeta 💙'];
 const typeEl=document.getElementById('type');
 if(matchMedia('(prefers-reduced-motion: reduce)').matches){
   typeEl.textContent=LINES[0];
@@ -314,38 +311,6 @@ if(matchMedia('(prefers-reduced-motion: reduce)').matches){
     else{del=false; li=(li+1)%LINES.length; setTimeout(tick,350);}
   })();
 }
-
-// ---- hujan ----
-const cv=document.getElementById('fx'),cx=cv.getContext('2d');
-let W,H,P=[];const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
-function size(){W=cv.width=innerWidth;H=cv.height=innerHeight;}
-size();addEventListener('resize',size);
-const N=Math.min(150,innerWidth/6|0);
-for(let i=0;i<N;i++)P.push({
-  x:Math.random()*W,
-  y:Math.random()*H,
-  len:Math.random()*20+10,
-  speed:Math.random()*8+4,
-  opacity:Math.random()*0.3+0.1
-});
-(function draw(){
-  cx.clearRect(0,0,W,H);
-  cx.strokeStyle='rgba(174,194,224,0.5)';
-  cx.lineWidth=1.2;
-  for(const p of P){
-    p.y+=p.speed;
-    p.x+=p.speed*0.2;
-    if(p.y>H+20){p.y=-20;p.x=Math.random()*W;}
-    if(p.x>W+20){p.x=-20;p.y=Math.random()*H;}
-    cx.globalAlpha=p.opacity;
-    cx.beginPath();
-    cx.moveTo(p.x,p.y);
-    cx.lineTo(p.x-p.len*0.3,p.y-p.len);
-    cx.stroke();
-  }
-  cx.globalAlpha=1;
-  if(!RM)requestAnimationFrame(draw);
-})();
 
 // ---- musik ----
 const bgm=document.getElementById('bgm'),pill=document.getElementById('audio-pill'),lbl=document.getElementById('pill-label');
